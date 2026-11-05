@@ -1,0 +1,66 @@
+{
+  "generatedAt": "2026-11-05",
+  "mode": "built-in image_gen",
+  "assets": [
+    {
+      "key": "logo",
+      "name": "logo-mark.png",
+      "source": "C:\\Users\\callt\\.codex\\generated_images\\01a1aa62-f6ff-7a52-97b8-306923d0f785\\exec-0854db10-0e7b-492c-89a6-bce20a4fcfae.png",
+      "prompt": "Use case: logo-brand. Create one beautifully balanced ORIGINAL logo symbol for a welcoming Japanese local recycling consultation brand. An open circular flow formed by two clean broad leaves, deep forest green #155A3D and soft medium leaf green. A tiny central negative space resembling a sprout, simple flat solid shapes, bold crisp edges, minimal vector-like professional mark that reads at small sizes. Center mark occupying 80 percent of square canvas. No words, no letters, no surrounding badge, no official certification, no gradients, no shadows. Truly transparent background."
+    },
+    {
+      "key": "hero",
+      "name": "hero-desktop.png",
+      "source": "C:\\Users\\callt\\.codex\\generated_images\\01a1aa62-f6ff-7a52-97b8-306923d0f785\\exec-21bee559-cd58-4450-bd6f-093d8c2ea8c2.png",
+      "prompt": "Use case: stylized-concept. Professional Japanese recycling consultation brand illustration. Sophisticated tactile paper-cut and matte sculpted paper, subtle soft ambient shadows, refined editorial art direction, deep forest green #155A3D, pale sage #DDECCB, warm ivory #FAF9F2, tiny muted butter yellow accents. Quiet welcoming modern mood, not childish, no people, no text, no letters, no numbers, no logos or watermarks, no recognisable brands. Illustrative objects only, never a real business or actual collection scene. Asset type: wide landscape website hero, 3:2 aspect ratio. A delightful miniature Japanese neighborhood, two modest low-rise apartment buildings and small houses, a green bicycle and small scooter, a tidy selection of a laptop and small home appliances, metallic copper coils and aluminium material, plus a small potted sapling. Soft broad rolling paper landforms and a curving path linking the neighborhood and objects. Composition: all subjects form a generously spaced panoramic scene in the bottom 48 percent of image; TOP 52 percent must be completely plain warm ivory with no objects or leaves, reserved for website headline. View slightly elevated three-quarter angle. Buildings and objects large enough to be clear; leaf silhouettes near bottom edges. No photographic realism. Avoid recycling bins and refuse heaps."
+    },
+    {
+      "key": "heroMobile",
+      "name": "hero-mobile.png",
+      "source": "C:\\Users\\callt\\.codex\\generated_images\\01a1aa62-f6ff-7a52-97b8-306923d0f785\\exec-8f4896bb-2222-4b8c-a862-c90fa24f5f3d.png",
+      "prompt": "Use case: stylized-concept. Professional Japanese recycling consultation brand illustration. Sophisticated tactile paper-cut and matte sculpted paper, subtle soft ambient shadows, refined editorial art direction, deep forest green #155A3D, pale sage #DDECCB, warm ivory #FAF9F2, tiny muted butter yellow accents. Quiet welcoming modern mood, not childish, no people, no text, no letters, no numbers, no logos or watermarks, no recognisable brands. Illustrative objects only, never a real business or actual collection scene. Asset type: vertical portrait mobile website hero, 2:3 aspect ratio. Miniature Japanese neighborhood in the LOWER HALF of composition: a small green-roof house and low-rise apartment, green bicycle, laptop, metallic copper coil and a sprout, on gently rolling paper landforms connected with an elegant curving path. TOP 55 percent completely plain warm ivory for website text. Carefully composed vertical scene with clear silhouettes and generous room. No photographic realism, no clutter, no refuse heaps."
+    },
+    {
+      "key": "appliances",
+      "name": "items-appliances.png",
+      "source": "C:\\Users\\callt\\.codex\\generated_images\\01a1aa62-f6ff-7a52-97b8-306923d0f785\\exec-65478897-7334-4825-9da0-c8c66e2bd23b.png",
+      "prompt": "Use case: stylized-concept. Professional Japanese recycling consultation brand illustration. Sophisticated tactile paper-cut and matte sculpted paper, subtle soft ambient shadows, refined editorial art direction, deep forest green #155A3D, pale sage #DDECCB, warm ivory #FAF9F2, tiny muted butter yellow accents. Quiet welcoming modern mood, not childish, no people, no text, no letters, no numbers, no logos or watermarks, no recognisable brands. Illustrative objects only, never a real business or actual collection scene. Asset type: category illustration, landscape 4:3 composition. Three beautifully arranged small household electronics: sage hairdryer, simple compact ivory digital camera and small dark green game controller. Three-quarter view, centered objects occupying 70 percent of image. Plain uniform warm ivory background with subtle grounding shadows. No screens with content. No large appliances."
+    },
+    {
+      "key": "computers",
+      "name": "items-computers.png",
+      "source": "C:\\Users\\callt\\.codex\\generated_images\\01a1aa62-f6ff-7a52-97b8-306923d0f785\\exec-9fafec2a-91cd-434a-b58f-842569d1ef0e.png",
+      "prompt": "Use case: stylized-concept. Professional Japanese recycling consultation brand illustration. Sophisticated tactile paper-cut and matte sculpted paper, subtle soft ambient shadows, refined editorial art direction, deep forest green #155A3D, pale sage #DDECCB, warm ivory #FAF9F2, tiny muted butter yellow accents. Quiet welcoming modern mood, not childish, no people, no text, no letters, no numbers, no logos or watermarks, no recognisable brands. Illustrative objects only, never a real business or actual collection scene. Asset type: category illustration, landscape 4:3 composition. A simple open laptop with a plain soft green screen, compact cream computer keyboard and small green mouse, arranged as a still life. Three-quarter view, centered objects occupying 70 percent of image, plain warm ivory background with subtle grounding shadows."
+    },
+    {
+      "key": "tools",
+      "name": "items-tools.png",
+      "source": "C:\\Users\\callt\\.codex\\generated_images\\01a1aa62-f6ff-7a52-97b8-306923d0f785\\exec-df16b80e-4906-4d3e-b512-74041728268e.png",
+      "prompt": "Use case: stylized-concept. Professional Japanese recycling consultation brand illustration. Sophisticated tactile paper-cut and matte sculpted paper, subtle soft ambient shadows, refined editorial art direction, deep forest green #155A3D, pale sage #DDECCB, warm ivory #FAF9F2, tiny muted butter yellow accents. Quiet welcoming modern mood, not childish, no people, no text, no letters, no numbers, no logos or watermarks, no recognisable brands. Illustrative objects only, never a real business or actual collection scene. Asset type: category illustration, landscape 4:3 composition. One classic simple cream-colored sewing machine, one small deep green cordless drill and a small silver wrench arranged in a balanced still life. Matte sculpted paper construction, recognizable clear silhouettes, three-quarter view, centered objects occupying 70 percent. Plain warm ivory background with subtle grounding shadows."
+    },
+    {
+      "key": "metals",
+      "name": "items-metals.png",
+      "source": "C:\\Users\\callt\\.codex\\generated_images\\01a1aa62-f6ff-7a52-97b8-306923d0f785\\exec-88dc8a99-23bf-4ab0-bcbe-f528c06fab14.png",
+      "prompt": "Use case: stylized-concept. Professional Japanese recycling consultation brand illustration. Sophisticated tactile paper-cut and matte sculpted paper, subtle soft ambient shadows, refined editorial art direction, deep forest green #155A3D, pale sage #DDECCB, warm ivory #FAF9F2, tiny muted butter yellow accents. Quiet welcoming modern mood, not childish, no people, no text, no letters, no numbers, no logos or watermarks, no recognisable brands. Illustrative objects only, never a real business or actual collection scene. Asset type: category illustration, landscape 4:3 composition. Neatly arranged copper wire coil with warm copper orange tint, two short silver aluminium profiles and a small bundle of cut electrical wire with green insulation, polished but matte paper sculpture. Clean resource materials, no refuse pile. Centered composition occupying 70 percent, plain warm ivory background, subtle grounding shadows."
+    },
+    {
+      "key": "bicycles",
+      "name": "items-bicycles.png",
+      "source": "C:\\Users\\callt\\.codex\\generated_images\\01a1aa62-f6ff-7a52-97b8-306923d0f785\\exec-053107c3-2599-4470-b224-e923f1adb2c0.png",
+      "prompt": "Use case: stylized-concept. Professional Japanese recycling consultation brand illustration. Sophisticated tactile paper-cut and matte sculpted paper, subtle soft ambient shadows, refined editorial art direction, deep forest green #155A3D, pale sage #DDECCB, warm ivory #FAF9F2, tiny muted butter yellow accents. Quiet welcoming modern mood, not childish, no people, no text, no letters, no numbers, no logos or watermarks, no recognisable brands. Illustrative objects only, never a real business or actual collection scene. Asset type: category illustration, landscape 4:3 composition. One sage-green Japanese city bicycle with front basket, one small forest-green scooter behind it, both clean simple clear recognizable silhouettes, no license plates or text. Elegant paper craft sculpture. Centered composition occupying 78 percent, plain warm ivory background with subtle grounding shadows."
+    },
+    {
+      "key": "furniture",
+      "name": "items-furniture.png",
+      "source": "C:\\Users\\callt\\.codex\\generated_images\\01a1aa62-f6ff-7a52-97b8-306923d0f785\\exec-c337ea5c-030e-4435-95e4-f6b7ea0cd688.png",
+      "prompt": "Use case: stylized-concept. Professional Japanese recycling consultation brand illustration. Sophisticated tactile paper-cut and matte sculpted paper, subtle soft ambient shadows, refined editorial art direction, deep forest green #155A3D, pale sage #DDECCB, warm ivory #FAF9F2, tiny muted butter yellow accents. Quiet welcoming modern mood, not childish, no people, no text, no letters, no numbers, no logos or watermarks, no recognisable brands. Illustrative objects only, never a real business or actual collection scene. Asset type: category illustration, landscape 4:3 composition. One sage-green armchair with light wood legs, a small simple cream office desk and muted oak three-drawer cabinet in a balanced still life, recognizable clear silhouettes. Three-quarter view, centered objects occupying 75 percent of image. Plain warm ivory background, subtle grounding shadows."
+    },
+    {
+      "key": "ogp",
+      "name": "ogp.png",
+      "source": "C:\\Users\\callt\\.codex\\generated_images\\01a1aa62-f6ff-7a52-97b8-306923d0f785\\exec-09802299-f433-4a6a-a6ec-601039644b77.png",
+      "prompt": "Use case: ads-marketing. Asset type: social sharing OGP cover, wide landscape approximately 1200:630 ratio. Create a polished Japanese website social sharing graphic for みどり♻リサイクル. Reference image 1 is the paper-craft neighborhood and recycled-item illustration style; reference image 2 is the brand symbol. Recompose those assets into an elegant professional cover. Warm ivory background, forest green typography, spacious clean editorial layout. At upper left use the green leaf symbol and EXACT Japanese brand text 'みどり♻リサイクル'. Main headline very large in the upper and middle part: '悩んだら、' on line 1 and 'まずお電話ください！' on line 2. Smaller subtitle '不用品の回収・買取相談' and small tag '関東エリア対応'. Keep all Japanese text impeccably spelled and readable with bold Japanese sans serif. Paper-craft scene along bottom quarter only, do not cover the title. No other text, no phone numbers, no badges, no additional claims. Output finished single cover image, not a mockup."
+    }
+  ]
+}

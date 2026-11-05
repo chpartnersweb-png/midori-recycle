@@ -1,0 +1,37 @@
+---
+import Icon from './Icon.astro';
+const steps: { number: string; icon: 'phone' | 'clipboard' | 'calendar' | 'truck'; title: string; text: string }[] = [
+  { number: '01', icon: 'phone', title: 'お電話でご相談', text: '品物や数量、お住まいの地域などを、わかる範囲でお伝えください。' },
+  { number: '02', icon: 'clipboard', title: '内容・条件を確認', text: '品物の状態や搬出条件を確認し、対応の可否と費用をご案内します。' },
+  { number: '03', icon: 'calendar', title: '訪問日時を調整', text: '案内内容にご納得いただいたうえで、ご都合に合わせて日時を調整します。' },
+  { number: '04', icon: 'truck', title: '確認した内容で対応', text: '事前に確認した作業内容に沿って、親切・丁寧に対応いたします。' },
+];
+const preparation = ['品物の種類・数量・状態', '所在地', '階数・搬出経路', '希望日時'];
+---
+<section id="flow" class="flow section" aria-labelledby="flow-title"><div class="container">
+  <div class="section-heading section-heading--center"><p class="eyebrow">HOW IT WORKS</p><h2 id="flow-title">はじまりは、一本のお電話から。</h2><p>費用や対応内容を事前にご説明。<br class="mobile-only" />ご納得いただいてから進めます。</p></div>
+  <div class="flow-journey" data-flow-journey>
+    <div class="flow-journey__head">
+      <p>ご相談から対応まで<span>4 STEPS</span></p>
+      <button class="flow-replay" type="button" data-flow-replay hidden><Icon name="repeat" size={16} /><span>流れをもう一度見る</span></button>
+    </div>
+    <ol class="flow-list">
+      {steps.map((step, index) => (
+        <li class="flow-step" data-flow-step>
+          <div class="flow-node" aria-hidden="true">
+            <span class="flow-node__step">STEP {step.number}</span>
+            <svg class="flow-node__ring" viewBox="0 0 100 100" fill="none" focusable="false"><circle cx="50" cy="50" r="46" pathLength="1" /></svg>
+            <Icon name={step.icon} size={32} class="flow-node__symbol" />
+          </div>
+          {index < steps.length - 1 && <span class="flow-connector" aria-hidden="true"><span></span></span>}
+          <div class="flow-step__content"><h3>{step.title}</h3><p>{step.text}</p></div>
+        </li>
+      ))}
+    </ol>
+  </div>
+  <div class="flow-preparation">
+    <div class="flow-preparation__heading"><span><Icon name="phone" size={23} /></span><div><h3>お電話の前に、わかる範囲で。</h3><p>すべてわからなくても大丈夫。<br class="mobile-only" />まずはお気軽にお聞かせください。</p></div></div>
+    <ul class="flow-preparation__items">{preparation.map(item => <li><Icon name="check" size={15} />{item}</li>)}</ul>
+  </div>
+</div></section>
+<script src="../scripts/flow.ts"></script>

@@ -1,0 +1,10 @@
+---
+import { results, otherResults } from '../data/results';
+import Icon from './Icon.astro';
+---
+<section id="results" class="results section" aria-labelledby="results-title"><div class="container">
+  <div class="section-heading section-heading--split"><div><p class="eyebrow">OUR EXPERIENCE</p><h2 id="results-title">まちのつながりを、<br />ひとつずつ。</h2></div><p class="section-heading__text">自治会様、修理業者様、不動産会社様、大家様。<br />これまでの経験と信頼関係を大切に、<br />一つひとつのご依頼に向き合っています。</p></div>
+  <div class="result-grid">{results.map(result => <article class="result"><div class="result__top"><span>CASE {result.number}</span><Icon name="leaf" size={25} /></div><p class="result__client">{result.client}</p><h3>{result.title}</h3><div class="result__figure"><span>{result.lead}</span><strong>{result.value}</strong><span>{result.unit}</span></div><p class="result__secondary">{result.secondary}</p><p class="result__note">{result.note}</p><p class="result__text">{result.text}</p></article>)}</div>
+  <div class="other-results">{otherResults.map(result => <article><span class="other-results__icon"><Icon name="check" size={21} /></span><div><p class="other-results__client">{result.title}</p><h3>{result.subtitle}</h3><p>{result.text}</p></div></article>)}</div>
+  <p class="image-caption">掲載の数量は過去の回収実績であり、一度に対応できる台数を保証するものではありません。</p>
+</div></section>

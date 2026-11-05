@@ -1,0 +1,20 @@
+---
+import { faqs } from '../data/faqs';
+import Icon from './Icon.astro';
+---
+<section id="faq" class="faq section" aria-labelledby="faq-title">
+  <div class="container faq__inner">
+    <div class="faq__heading"><p class="eyebrow">QUESTIONS & ANSWERS</p><h2 id="faq-title">よくあるご質問</h2><p>気になることは、<br />お電話でもお気軽に。</p></div>
+    <div class="faq-list">
+      {faqs.map((faq, index) => (
+        <details class="faq-item">
+          <summary aria-controls={`faq-answer-${index + 1}`}><span class="faq-item__q" aria-hidden="true">Q.</span><h3>{faq.question}</h3><Icon name="plus" size={21} /></summary>
+          <div class="faq-item__panel" id={`faq-answer-${index + 1}`}>
+            <div class="faq-item__answer"><span aria-hidden="true">A.</span><p>{faq.answer}</p></div>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+<script src="../scripts/faq.ts"></script>

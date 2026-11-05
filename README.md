@@ -1,43 +1,33 @@
-# Astro Starter Kit: Minimal
+# みどり♻リサイクル
 
-```sh
-npm create astro@latest -- --template minimal
+株式会社盈和商事の不用品回収・買取相談ホームページです。Astroで構築した日本語の1ページ構成です。
+
+## ドキュメント
+
+- [制作プラン](docs/HP-制作プラン.md)
+- [編集・運用ガイド](docs/EDITING.md)
+- [掲載内容の根拠](docs/CONTENT-SOURCES.md)
+- [生成素材の記録](docs/GENERATED-ASSETS.md)
+
+## 開発
+
+AGENTS.mdに従い、開発サーバーはバックグラウンドで起動します。
+
+```powershell
+npm run astro -- dev --background
+npm run astro -- dev status
+npm run astro -- dev logs
+npm run astro -- dev stop
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 変更先
 
-## 🚀 Project Structure
+基本情報・電話・エリアは`src/data/site.ts`、品目・サービス・実績・FAQは`src/data/`の各ファイルで管理します。スタイルは`src/styles/global.css`、ページ構成は`src/pages/index.astro`です。
 
-Inside of your Astro project, you'll see the following folders and files:
+素材は`src/assets/generated/`、生成原本は同フォルダの`originals/`、OGPとアイコンは`public/`にあります。生成プロンプト全文は`scripts/generated-assets.json`に保存しています。
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## 公開前の設定
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+本番URLを`astro.config.mjs`の`site`に設定してください。正式な許可情報・LINEの追加URLは確認後に`src/data/site.ts`へ設定できます。詳しくは編集ガイドを参照してください。
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+2026年11月5日にローカル実装を作成しました。ユーザーの指定により、実装後のビルド・テスト・型チェック・ブラウザー確認・サーバー起動は実施していません。公開も行っていません。

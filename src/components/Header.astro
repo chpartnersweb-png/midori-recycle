@@ -1,0 +1,19 @@
+---
+import { site, navigation } from '../data/site';
+import Brand from './Brand.astro';
+import Icon from './Icon.astro';
+---
+<header class="site-header">
+  <div class="site-header__inner">
+    <Brand />
+    <nav class="desktop-nav" aria-label="メインナビゲーション">{navigation.slice(0, 3).map(link => <a href={link.href}>{link.label}</a>)}</nav>
+    <a class="header-phone" href={site.phoneHref} aria-label={`電話で相談する ${site.phone} 電話対応 ${site.hours}`}><Icon name="phone" size={20} /><span><strong>{site.phone}</strong><small>電話対応 {site.hours}</small></span></a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く" data-menu-toggle><span></span><span></span></button>
+  </div>
+</header>
+<dialog id="mobile-menu" class="mobile-menu" aria-labelledby="menu-title" data-lenis-prevent>
+  <div class="mobile-menu__head"><span id="menu-title">メニュー</span><button type="button" class="menu-close" aria-label="メニューを閉じる" data-menu-close>閉じる <span aria-hidden="true">×</span></button></div>
+  <nav aria-label="モバイルナビゲーション">{navigation.map(link => <a href={link.href}>{link.label}<Icon name="arrow" /></a>)}<a href="#faq">よくあるご質問<Icon name="arrow" /></a></nav>
+  <a class="mobile-menu__phone" href={site.phoneHref}><Icon name="phone" />{site.phone}</a>
+  <p>営業時間・電話対応時間 {site.hours}</p>
+</dialog>

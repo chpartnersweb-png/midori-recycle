@@ -1,0 +1,8 @@
+---
+import Icon from './Icon.astro';
+import { site } from '../data/site';
+---
+<section id="area" class="area section" aria-labelledby="area-title"><div class="container area__inner">
+  <div class="area__heading"><p class="eyebrow">SERVICE AREA</p><h2 id="area-title">西東京市から、<br />関東エリアへ。</h2><p>個人のお客様から、自治会・管理会社様まで。<br />品物のある場所やご希望の日時を<br />お電話でお聞かせください。</p></div>
+  <div class="area__info"><div class="area__region"><Icon name="pin" size={30} /><div><span>対応エリア</span><strong>{site.area}</strong></div></div><div class="area__visit"><span class="area__visit-label">西東京市エリア</span><h3>無料出張対応</h3><p>※{site.visitNote}</p></div><p class="area__fine">訪問日時はご都合を伺いながら調整いたします。<br />地域やご依頼の内容について、まずはご相談ください。</p></div>
+</div></section>

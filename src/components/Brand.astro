@@ -1,0 +1,8 @@
+---
+import { Image } from 'astro:assets';
+import mark from '../assets/generated/logo-mark.png';
+---
+<a class="brand" href="#top" aria-label="みどりリサイクル トップへ">
+  <Image src={mark} width={58} height={58} alt="" class="brand__mark" loading="eager" />
+  <span class="brand__text"><small>不用品の回収・買取相談</small><span>みどり<span class="brand__recycle" aria-label="リサイクルマーク">♻</span>リサイクル</span></span>
+</a>

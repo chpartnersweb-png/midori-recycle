@@ -1,0 +1,39 @@
+---
+import hero from '../assets/generated/hero-desktop.webp';
+import mobile from '../assets/generated/hero-mobile.webp';
+import Icon from './Icon.astro';
+import { site } from '../data/site';
+---
+<section class="hero" aria-labelledby="hero-title">
+  <picture class="hero__art" aria-hidden="true">
+    <source media="(max-aspect-ratio: 4/5)" srcset={mobile.src} width={mobile.width} height={mobile.height} />
+    <img src={hero.src} width={hero.width} height={hero.height} alt="" fetchpriority="high" loading="eager" decoding="async" />
+  </picture>
+
+  <div class="hero__content">
+    <p class="hero__eyebrow"><Icon name="pin" size={15} />西東京市を拠点に、関東エリアへ</p>
+    <h1 id="hero-title">
+      <span class="hero__title-lead">悩んだら、</span>
+      <span class="hero__title-main">まず<em>お電話</em>ください！</span>
+    </h1>
+    <p class="hero__description">不用品の回収・買取、<br class="mobile-only" />退去後の残置物整理のご相談。</p>
+    <div class="hero__action">
+      <a class="hero__call" href={site.phoneHref} aria-label={`お電話で相談 ${site.phone}`}>
+        <Icon name="phone" size={24} />
+        <span><small>お電話でお気軽にご相談ください</small><strong>{site.phone}</strong></span>
+        <span class="hero__call-arrow"><Icon name="arrow" size={18} /></span>
+      </a>
+      <p class="hero__hours"><span class="hero__hours-label"><Icon name="clock" size={16} />営業時間・電話対応時間</span><strong>{site.hours}</strong></p>
+    </div>
+  </div>
+
+  <div class="hero__footer">
+    <div class="hero__visit">
+      <p><span>西東京市エリア</span><strong>無料出張対応</strong></p>
+      <small>※{site.visitNote}</small>
+    </div>
+    <div class="hero__next">
+      <a href="#items" aria-label="ご相談いただける品目を見る"><span>ご相談いただける品目</span><span class="hero__scroll-icon"><Icon name="arrow-down" size={18} /></span></a>
+    </div>
+  </div>
+</section>

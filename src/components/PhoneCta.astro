@@ -1,0 +1,11 @@
+---
+import { site } from '../data/site';
+import Icon from './Icon.astro';
+interface Props { variant?: 'default' | 'light'; label?: string; }
+const { variant = 'default', label = 'お電話でお気軽にご相談ください' } = Astro.props;
+---
+<a class:list={['phone-cta', `phone-cta--${variant}`]} href={site.phoneHref}>
+  <span class="phone-cta__icon"><Icon name="phone" size={26} /></span>
+  <span class="phone-cta__body"><span class="phone-cta__label">{label}</span><span class="phone-cta__number">{site.phone}</span><span class="phone-cta__hours">営業時間・電話対応時間 {site.hours}</span></span>
+  <Icon name="arrow" class="phone-cta__arrow" size={24} />
+</a>

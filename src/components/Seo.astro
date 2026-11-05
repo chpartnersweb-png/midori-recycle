@@ -1,0 +1,31 @@
+---
+import { site } from '../data/site';
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined;
+const ogp = Astro.site ? new URL('/ogp.jpg', Astro.site) : undefined;
+const schema = {
+  '@context': 'https://schema.org', '@type': 'LocalBusiness',
+  name: site.name, legalName: site.company, description: site.description, telephone: `+81-${site.phone.slice(1)}`,
+  address: { '@type': 'PostalAddress', postalCode: site.postcode, addressRegion: site.prefecture, addressLocality: site.city, streetAddress: site.street, addressCountry: 'JP' },
+  areaServed: { '@type': 'Place', name: site.area },
+  ...(canonical ? { url: canonical.href } : {}),
+};
+---
+<title>{site.title}</title>
+<meta name="description" content={site.description} />
+<meta name="theme-color" content="#155a3d" />
+{canonical && <link rel="canonical" href={canonical} />}
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:site_name" content={site.name} />
+<meta property="og:title" content={site.title} />
+<meta property="og:description" content={site.description} />
+{canonical && <meta property="og:url" content={canonical} />}
+<meta property="og:image" content={ogp?.href ?? '/ogp.jpg'} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="みどりリサイクル。不用品の回収・買取相談、関東エリア対応。" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={site.title} />
+<meta name="twitter:description" content={site.description} />
+<meta name="twitter:image" content={ogp?.href ?? '/ogp.jpg'} />
+<script type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />
