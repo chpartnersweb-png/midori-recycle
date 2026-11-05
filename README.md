@@ -8,6 +8,7 @@
 - [編集・運用ガイド](docs/EDITING.md)
 - [掲載内容の根拠](docs/CONTENT-SOURCES.md)
 - [生成素材の記録](docs/GENERATED-ASSETS.md)
+- [SEO設定・公開後の手順](docs/SEO.md)
 
 ## 開発
 
@@ -28,6 +29,6 @@ npm run astro -- dev stop
 
 ## 公開前の設定
 
-本番URLを`astro.config.mjs`の`site`に設定してください。正式な許可情報・LINEの追加URLは確認後に`src/data/site.ts`へ設定できます。詳しくは編集ガイドを参照してください。
+本番URLは`https://midori-recycle.pages.dev/`です。`src/config/seo.mjs`で管理し、Astroの`site`、canonical、OGP、構造化データ、robots.txt、サイトマップへ反映しています。正式な許可情報・LINEの追加URLは確認後に`src/data/site.ts`へ設定できます。SEO設定の公開反映には再ビルド・再デプロイが必要です。詳しくは編集ガイドと`docs/SEO.md`を参照してください。
 
 2026年11月5日にローカル実装を作成しました。ユーザーの指定により、実装後のビルド・テスト・型チェック・ブラウザー確認・サーバー起動は実施していません。公開も行っていません。

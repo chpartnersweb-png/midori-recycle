@@ -22,6 +22,7 @@ Astroの1ページ構成です。入口は`src/pages/index.astro`、全体のHTM
 | サイト全体のGSAPアニメーション | `src/scripts/motion.ts` |
 | 色・文字サイズ・余白・スマホ表示 | `src/styles/global.css` |
 | SEO・構造化データ | `src/components/Seo.astro` |
+| 本番URL・サイトマップ対象 | `src/config/seo.mjs` |
 | モバイルメニュー | `src/components/Header.astro`、`src/scripts/navigation.ts` |
 | Lenis・ページ内リンクのスクロール | `src/scripts/scroll.ts` |
 
@@ -150,11 +151,11 @@ npm run astro -- dev stop
 
 ## 公開URLの設定
 
-本番URLは未提供です。決定したら`astro.config.mjs`の`defineConfig`内に`site`を追加し、実際の本番URLを設定してください。
+本番URLは`https://midori-recycle.pages.dev/`です。`src/config/seo.mjs`で管理し、Astroの`site`、canonical、OGP、構造化データ、robots.txt、サイトマップから共通参照しています。ドメインを変更する場合はこの設定を更新してください。
 
-`Seo.astro`は`Astro.site`が設定されると、canonical・og:url・OGP画像の絶対URLを生成します。未設定時はcanonical・og:urlを出さず、OGP画像は`/ogp.jpg`の相対指定です。SNS共有の本番運用前に、必ず実際のURLを設定してください。
+`Seo.astro`はcanonical・og:url・OGP画像を絶対URLで出力します。タイトル・説明は`src/data/site.ts`、会社情報・サービスのJSON-LDは`site.ts`と`services.ts`の掲載データを参照します。
 
-サイトマップ、robotsの本番URL指定、Search Consoleへの登録は本番URLの確定後に行う工程です。現段階で公開・検索登録・インデックス確認は行っていません。
+`src/pages/robots.txt.ts`と`src/pages/sitemap.xml.ts`で静的ファイルを生成します。現在のサイトマップ対象はトップページのみです。ソース変更後の再デプロイ・Search Consoleへの登録・インデックス確認は行っていません。設定と公開後の手順は`docs/SEO.md`を参照してください。
 
 ## 今回の実施範囲
 

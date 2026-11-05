@@ -1,31 +1,112 @@
 ---
 import { site } from '../data/site';
-const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined;
-const ogp = Astro.site ? new URL('/ogp.jpg', Astro.site) : undefined;
-const schema = {
-  '@context': 'https://schema.org', '@type': 'LocalBusiness',
-  name: site.name, legalName: site.company, description: site.description, telephone: `+81-${site.phone.slice(1)}`,
-  address: { '@type': 'PostalAddress', postalCode: site.postcode, addressRegion: site.prefecture, addressLocality: site.city, streetAddress: site.street, addressCountry: 'JP' },
+import { services } from '../data/services';
+import { seo } from '../config/seo.mjs';
+
+const base = new URL(seo.siteUrl);
+// Query strings and fragments are excluded from the canonical page URL.
+const canonical = new URL(Astro.url.pathname, base);
+const ogp = new URL(seo.ogImagePath, base);
+const businessId = new URL('#business', base).href;
+const websiteId = new URL('#website', base).href;
+const logoId = new URL('#logo', base).href;
+const telephone = `+81-${site.phone.slice(1)}`;
+const serviceNodes = services.map(service => ({
+  '@type': 'Service',
+  '@id': new URL(`#service-${service.id}`, base).href,
+  url: new URL(`#service-${service.id}`, base).href,
+  name: ['electronics', 'metals', 'bicycles'].includes(service.id)
+    ? `${service.title}の回収・買取相談`
+    : service.title,
+  description: service.description,
+  provider: { '@id': businessId },
   areaServed: { '@type': 'Place', name: site.area },
-  ...(canonical ? { url: canonical.href } : {}),
+}));
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'LocalBusiness',
+      '@id': businessId,
+      name: site.name,
+      alternateName: site.name.replace('♻', ''),
+      legalName: site.company,
+      url: base.href,
+      description: site.description,
+      telephone,
+      logo: { '@id': logoId },
+      address: {
+        '@type': 'PostalAddress',
+        postalCode: site.postcode,
+        addressRegion: site.prefecture,
+        addressLocality: site.city,
+        streetAddress: site.street,
+        addressCountry: 'JP',
+      },
+      areaServed: { '@type': 'Place', name: site.area },
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'お問い合わせ',
+        telephone,
+        availableLanguage: 'Japanese',
+        description: `営業時間・電話対応時間 ${site.hours}`,
+      },
+    },
+    {
+      '@type': 'ImageObject',
+      '@id': logoId,
+      url: new URL(seo.logoPath, base).href,
+      contentUrl: new URL(seo.logoPath, base).href,
+      width: 512,
+      height: 512,
+      caption: `${site.name}のロゴ`,
+    },
+    {
+      '@type': 'WebSite',
+      '@id': websiteId,
+      url: base.href,
+      name: site.name,
+      alternateName: site.name.replace('♻', ''),
+      inLanguage: seo.language,
+      publisher: { '@id': businessId },
+    },
+    {
+      '@type': 'WebPage',
+      '@id': new URL('#webpage', canonical).href,
+      url: canonical.href,
+      name: site.title,
+      description: site.description,
+      inLanguage: seo.language,
+      isPartOf: { '@id': websiteId },
+      about: { '@id': businessId },
+      mainEntity: { '@id': businessId },
+      mentions: serviceNodes.map(service => ({ '@id': service['@id'] })),
+    },
+    ...serviceNodes,
+  ],
 };
 ---
 <title>{site.title}</title>
 <meta name="description" content={site.description} />
+<meta name="robots" content="index,follow,max-image-preview:large" />
 <meta name="theme-color" content="#155a3d" />
-{canonical && <link rel="canonical" href={canonical} />}
+<link rel="canonical" href={canonical.href} />
+<link rel="sitemap" type="application/xml" href={new URL('/sitemap.xml', base).href} />
 <meta property="og:type" content="website" />
-<meta property="og:locale" content="ja_JP" />
+<meta property="og:locale" content={seo.locale} />
 <meta property="og:site_name" content={site.name} />
 <meta property="og:title" content={site.title} />
 <meta property="og:description" content={site.description} />
-{canonical && <meta property="og:url" content={canonical} />}
-<meta property="og:image" content={ogp?.href ?? '/ogp.jpg'} />
+<meta property="og:url" content={canonical.href} />
+<meta property="og:image" content={ogp.href} />
+<meta property="og:image:type" content="image/jpeg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="みどりリサイクル。不用品の回収・買取相談、関東エリア対応。" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={site.title} />
 <meta name="twitter:description" content={site.description} />
-<meta name="twitter:image" content={ogp?.href ?? '/ogp.jpg'} />
+<meta name="twitter:image" content={ogp.href} />
+<meta name="twitter:image:alt" content="みどりリサイクル。不用品の回収・買取相談、関東エリア対応。" />
 <script type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />
