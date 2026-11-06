@@ -4,4 +4,4 @@ import Icon from './Icon.astro';
 import { site, navigation } from '../data/site';
 ---
 <footer class="site-footer"><div class="container"><div class="site-footer__top"><Brand /><nav aria-label="フッターナビゲーション">{navigation.map(link => <a href={link.href}>{link.label}</a>)}</nav><a class="back-top" href="#top" aria-label="ページの先頭へ"><Icon name="arrow-down" size={21} /></a></div><div class="site-footer__bottom"><span>{site.company}</span><small>© {new Date().getFullYear()} {site.company}</small></div></div></footer>
-<div class="mobile-call"><a href={site.phoneHref}><span class="mobile-call__icon"><Icon name="phone" size={24} /></span><span class="mobile-call__label">電話で相談する<small>電話対応 {site.hours}</small></span><strong>{site.phone}</strong><Icon name="arrow" size={18} /></a></div>
+<div class="mobile-call"><a href={site.phoneHref}><span class="mobile-call__icon"><Icon name="phone" size={24} /></span><span class="mobile-call__label">電話で相談する<small>電話対応 {site.hours}</small></span><strong>{site.phone}</strong></a></div>

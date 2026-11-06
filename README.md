@@ -29,6 +29,6 @@ npm run astro -- dev stop
 
 ## 公開前の設定
 
-本番URLは`https://midori-recycle.pages.dev/`です。`src/config/seo.mjs`で管理し、Astroの`site`、canonical、OGP、構造化データ、robots.txt、サイトマップへ反映しています。正式な許可情報・LINEの追加URLは確認後に`src/data/site.ts`へ設定できます。SEO設定の公開反映には再ビルド・再デプロイが必要です。詳しくは編集ガイドと`docs/SEO.md`を参照してください。
+本番URLは`https://midori-recycle.pages.dev/`です。`src/config/seo.mjs`で管理し、Astroの`site`、canonical、OGP、構造化データ、robots.txt、サイトマップへ反映しています。古物商許可は許可証の写真とチラシを照合し、個人の許可名義を添えて`src/data/site.ts`へ設定済みです。LINEもユーザー提供の友だち追加URLを設定しています。ソース変更の公開反映には再ビルド・再デプロイが必要です。詳しくは編集ガイドと`docs/SEO.md`を参照してください。
 
 2026年11月5日にローカル実装を作成しました。ユーザーの指定により、実装後のビルド・テスト・型チェック・ブラウザー確認・サーバー起動は実施していません。公開も行っていません。

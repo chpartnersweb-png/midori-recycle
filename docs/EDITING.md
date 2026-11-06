@@ -101,8 +101,9 @@ Astroの1ページ構成です。入口は`src/pages/index.astro`、全体のHTM
 
 ## 許可情報・LINE
 
-- 古物商許可情報は正式な許可証と照合したあと、`site.ts`の`permit`を`{ authority: '正式な公安委員会名', number: '正式な許可番号' }`へ変更します。会社情報欄に表示されます。
-- LINEは確認済みの友だち追加URLを`lineUrl`に設定すると、お問い合わせ欄にリンクが表示されます。連絡先の数字からURLを作らないでください。
+- 古物商許可は提供された許可証の写真とチラシを照合し、`site.ts`の`permit`に`authority: '東京都公安委員会'`、`number: '第308902216266号'`、`holder: '鈴木 翠（個人名義）'`を設定しています。会社情報欄に公安委員会・番号・許可名義を表示します。変更時も許可証と照合し、個人名義と法人名義を区別してください。
+- LINEはユーザー提供の`https://line.me/ti/p/2wY3sc7yM7`を`lineUrl`に設定し、お問い合わせ欄にリンクを表示しています。変更時も提供された友だち追加URLを使用し、連絡先の数字からURLを作らないでください。
+- LINEボタンはブランドカラーの緑を背景にし、`LineIcon.astro`のSimple Icons製LINEアイコンを表示します。アイコンは[Simple Iconsの公式SVG](https://github.com/simple-icons/simple-icons/blob/develop/icons/line.svg)のパスを保持してローカルに組み込み、表示時の外部取得やパッケージの追加は不要です。スタイルは`global.css`の`.contact__line`で管理しています。
 - 定休日・保有資格・来店受付・支払方法などは未提供です。確認した内容だけを追加します。
 
 ## 文字・フォント

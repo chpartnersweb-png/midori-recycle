@@ -18,10 +18,14 @@ export const site = {
   compliance: '無料回収・買取・廃棄物処理については、関係法令や必要な許可に従って対応いたします。',
   title: 'みどり♻リサイクル｜西東京市の不用品回収・買取相談',
   description: '西東京市を拠点に関東エリアの不用品回収・買取相談に対応。家電・金属・自転車やバイク、退去後の残置物整理、遺品整理のご相談も承ります。西東京市は無料出張対応。回収・作業費用は品物や条件により異なります。電話対応9:00〜20:00。',
-  // 正式な許可証と照合するまで公開しません。
-  permit: null as null | { authority: string; number: string },
-  // 本人確認済みの友だち追加URLが用意できたら設定します。
-  lineUrl: null as string | null,
+  // 提供された許可証の写真とチラシを照合。許可証は代表者の個人名義です。
+  permit: {
+    authority: '東京都公安委員会',
+    number: '第308902216266号',
+    holder: '鈴木 翠（個人名義）',
+  },
+  // ユーザーから提供された友だち追加URL。
+  lineUrl: 'https://line.me/ti/p/2wY3sc7yM7',
 };
 
 export const navigation = [
